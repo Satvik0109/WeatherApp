@@ -13,6 +13,10 @@
 		BDBDEA2F273C6432008DF02B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA1A273C642A008DF02B /* ContentView.swift */; };
 		BDBDEA30273C6432008DF02B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDBDEA1B273C6432008DF02B /* Assets.xcassets */; };
 		BDBDEA31273C6432008DF02B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDBDEA1B273C6432008DF02B /* Assets.xcassets */; };
+		BDBDEA3D273C65AE008DF02B /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA3C273C65AE008DF02B /* Weather.swift */; };
+		BDBDEA3E273C65AE008DF02B /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA3C273C65AE008DF02B /* Weather.swift */; };
+		BDBDEA42273C6F30008DF02B /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA41273C6F30008DF02B /* WeatherFetcher.swift */; };
+		BDBDEA43273C6F30008DF02B /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA41273C6F30008DF02B /* WeatherFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,8 @@
 		BDBDEA28273C6432008DF02B /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDBDEA2A273C6432008DF02B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDBDEA2B273C6432008DF02B /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		BDBDEA3C273C65AE008DF02B /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		BDBDEA41273C6F30008DF02B /* WeatherFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,8 @@
 				BDBDEA19273C642A008DF02B /* WeatherAppApp.swift */,
 				BDBDEA1A273C642A008DF02B /* ContentView.swift */,
 				BDBDEA1B273C6432008DF02B /* Assets.xcassets */,
+				BDBDEA3C273C65AE008DF02B /* Weather.swift */,
+				BDBDEA41273C6F30008DF02B /* WeatherFetcher.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -187,7 +195,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBDEA42273C6F30008DF02B /* WeatherFetcher.swift in Sources */,
 				BDBDEA2E273C6432008DF02B /* ContentView.swift in Sources */,
+				BDBDEA3D273C65AE008DF02B /* Weather.swift in Sources */,
 				BDBDEA2C273C6432008DF02B /* WeatherAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBDEA43273C6F30008DF02B /* WeatherFetcher.swift in Sources */,
 				BDBDEA2F273C6432008DF02B /* ContentView.swift in Sources */,
+				BDBDEA3E273C65AE008DF02B /* Weather.swift in Sources */,
 				BDBDEA2D273C6432008DF02B /* WeatherAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
