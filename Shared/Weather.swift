@@ -172,7 +172,7 @@ struct Current: Codable{
         
         self.temp_c = try response.decodeIfPresent(Float.self, forKey: .temp_c) ?? 0
         self.temp_f = try response.decodeIfPresent(Float.self, forKey: .temp_f) ?? 0
-        self.is_day = try response.decodeIfPresent(Bool.self, forKey: .is_day) ?? 0
+        self.is_day = try response.decodeIfPresent(Int.self, forKey: .is_day) ?? 0
         self.cond_text = try response.decodeIfPresent(String.self, forKey: .cond_text) ?? "Unavailable"
         self.cond_icon = try response.decodeIfPresent(String.self, forKey: .cond_icon) ?? "Unavailable"
         self.wind_kph = try response.decodeIfPresent(Float.self, forKey: .wind_kph) ?? 0
@@ -180,7 +180,7 @@ struct Current: Codable{
         self.wind_dir = try response.decodeIfPresent(String.self, forKey: .wind_dir) ?? "Unavailable"
         self.precip_mm = try response.decodeIfPresent(Float.self, forKey: .precip_mm) ?? 0
         self.humidity = try response.decodeIfPresent(Float.self, forKey: .humidity) ?? 0
-        self.cloud = try response.decodeIfPresent(Bool.self, forKey: .cloud) ?? 0
+        self.cloud = try response.decodeIfPresent(Int.self, forKey: .cloud) ?? 0
         self.feelslike_c = try response.decodeIfPresent(Float.self, forKey: .feelslike_c) ?? 0
         self.vis_km = try response.decodeIfPresent(Float.self, forKey: .vis_km) ?? 0
         self.uv = try response.decodeIfPresent(Float.self, forKey: .uv) ?? 0

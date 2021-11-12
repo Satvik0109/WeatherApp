@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct WeatherAppApp: App {
-    var fetcher = WeatherFetcher()
+    var helper = LocationAndWeatherFetcher()
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(fetcher)
+            ContentView().environmentObject(helper)
         }
     }
 }

@@ -6,18 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
-    @EnvironmentObject var fetcher : WeatherFetcher
+    @EnvironmentObject var locationManager : LocationAndWeatherFetcher
     var body: some View {
         NavigationView{
             VStack(){
-                Text(fetcher.weatherList.name)
-                Text(fetcher.weatherList.region)
-                Text(fetcher.weatherList.country)
-                Text(String(fetcher.weatherList.lat))
-                Text(String(fetcher.weatherList.lon))
-                Text(fetcher.weatherList.localtime)
+                Text(locationManager.weather.name)
                 }
             }
         }
