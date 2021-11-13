@@ -21,7 +21,7 @@ struct Weather: Codable{
     var temp_f : Float
     var is_day : Int
     var cond_text : String
-    var cond_icon : String
+    var cond_code : Int
     //Wind Info
     var wind_kph : Float
     var wind_degree : Float
@@ -51,7 +51,7 @@ struct Weather: Codable{
         temp_f = 0
         is_day = 0
         cond_text = ""
-        cond_icon = ""
+        cond_code = 0
         wind_kph = 0
         wind_degree = 0
         wind_dir = ""
@@ -79,7 +79,7 @@ struct Weather: Codable{
         self.temp_f = currentContainer?.temp_f ?? 0
         self.is_day = currentContainer?.is_day ?? 0
         self.cond_text = currentContainer?.cond_text ?? "Unavailable"
-        self.cond_icon = currentContainer?.cond_icon ?? "Unavailable"
+        self.cond_code = currentContainer?.cond_code ?? 0
         self.wind_kph = currentContainer?.wind_kph ?? 0
         self.wind_degree = currentContainer?.wind_degree ?? 0
         self.wind_dir = currentContainer?.wind_dir ?? "Unavailable"
@@ -136,7 +136,7 @@ struct Current: Codable{
     var temp_f : Float
     var is_day : Int
     var cond_text : String
-    var cond_icon : String
+    var cond_code : Int
     //Wind Info
     var wind_kph : Float
     var wind_degree : Float
@@ -154,8 +154,6 @@ struct Current: Codable{
         case temp_c = "temp_c"
         case temp_f = "temp_f"
         case is_day = "is_day"
-        case cond_text = "cond_text"
-        case cond_icon = "cond_icon"
         case wind_kph = "wind_kph"
         case wind_degree = "wind_degree"
         case wind_dir = "wind_dir"
@@ -165,16 +163,18 @@ struct Current: Codable{
         case feelslike_c = "feelslike_c"
         case vis_km = "vis_km"
         case uv = "uv"
+        case condition = "condition"
     }
     
     init(from decoder: Decoder) throws{
         let response = try decoder.container(keyedBy: CodingKeys.self)
+        let conditionContainer = try response.decodeIfPresent(Condition.self, forKey: .condition)
         
         self.temp_c = try response.decodeIfPresent(Float.self, forKey: .temp_c) ?? 0
         self.temp_f = try response.decodeIfPresent(Float.self, forKey: .temp_f) ?? 0
         self.is_day = try response.decodeIfPresent(Int.self, forKey: .is_day) ?? 0
-        self.cond_text = try response.decodeIfPresent(String.self, forKey: .cond_text) ?? "Unavailable"
-        self.cond_icon = try response.decodeIfPresent(String.self, forKey: .cond_icon) ?? "Unavailable"
+        self.cond_text = conditionContainer?.cond_text ?? "Unavailable"
+        self.cond_code = conditionContainer?.cond_code ?? 0
         self.wind_kph = try response.decodeIfPresent(Float.self, forKey: .wind_kph) ?? 0
         self.wind_degree = try response.decodeIfPresent(Float.self, forKey: .wind_degree) ?? 0
         self.wind_dir = try response.decodeIfPresent(String.self, forKey: .wind_dir) ?? "Unavailable"
@@ -189,5 +189,26 @@ struct Current: Codable{
     func encode(to encoder: Encoder) throws {
         //Nothing to encode
     }
-
+    
+    struct Condition: Codable{
+        
+        var cond_text : String
+        var cond_code : Int
+        
+        enum CodingKeys: String, CodingKey{
+            case cond_text = "text"
+            case cond_code = "code"
+        }
+        
+        init(from decoder: Decoder) throws{
+            let response = try decoder.container(keyedBy: CodingKeys.self)
+            
+            self.cond_text = try response.decodeIfPresent(String.self, forKey: .cond_text) ?? "Unavailable"
+            self.cond_code = try response.decodeIfPresent(Int.self, forKey: .cond_code) ?? 0
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            //Nothing to encode
+        }
+    }
 }

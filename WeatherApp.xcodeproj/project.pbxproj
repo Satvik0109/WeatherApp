@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD67A681273F1B4500A68AD2 /* CustomViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67A680273F1B4500A68AD2 /* CustomViewModifiers.swift */; };
+		BD67A682273F1B4500A68AD2 /* CustomViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67A680273F1B4500A68AD2 /* CustomViewModifiers.swift */; };
 		BDBDEA2C273C6432008DF02B /* WeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA19273C642A008DF02B /* WeatherAppApp.swift */; };
 		BDBDEA2D273C6432008DF02B /* WeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA19273C642A008DF02B /* WeatherAppApp.swift */; };
 		BDBDEA2E273C6432008DF02B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDEA1A273C642A008DF02B /* ContentView.swift */; };
@@ -20,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD67A680273F1B4500A68AD2 /* CustomViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifiers.swift; sourceTree = "<group>"; };
 		BDBDEA19273C642A008DF02B /* WeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppApp.swift; sourceTree = "<group>"; };
 		BDBDEA1A273C642A008DF02B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BDBDEA1B273C6432008DF02B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 				BDBDEA1A273C642A008DF02B /* ContentView.swift */,
 				BDBDEA1B273C6432008DF02B /* Assets.xcassets */,
 				BDBDEA3C273C65AE008DF02B /* Weather.swift */,
+				BD67A680273F1B4500A68AD2 /* CustomViewModifiers.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -207,6 +211,7 @@
 				BDBDEA3D273C65AE008DF02B /* Weather.swift in Sources */,
 				BDBDEA2C273C6432008DF02B /* WeatherAppApp.swift in Sources */,
 				BDBDEA4A273DF996008DF02B /* LocationAndWeatherFetcher.swift in Sources */,
+				BD67A681273F1B4500A68AD2 /* CustomViewModifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +223,7 @@
 				BDBDEA3E273C65AE008DF02B /* Weather.swift in Sources */,
 				BDBDEA2D273C6432008DF02B /* WeatherAppApp.swift in Sources */,
 				BDBDEA4B273DF996008DF02B /* LocationAndWeatherFetcher.swift in Sources */,
+				BD67A682273F1B4500A68AD2 /* CustomViewModifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
