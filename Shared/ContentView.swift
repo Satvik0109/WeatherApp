@@ -3,7 +3,7 @@
 //  Shared
 //
 //  Created by Satvik Kathpal on 2021-11-10.
-//
+//  991487352
 
 import SwiftUI
 import MapKit
@@ -26,9 +26,10 @@ struct ContentView: View {
                         }.colorInvert()
                         .padding()
                         Spacer()
-                    }
+                    }//Location Info
                     
                     Spacer()
+                    
                     VStack(){
                         let imageText: String = getImage(code: locationManager.weather.cond_code)
                         Image(imageText)
@@ -37,8 +38,10 @@ struct ContentView: View {
                         Text("\(locationManager.weather.cond_text)")
                             .modifier(LightSubtext())
                             .colorInvert()
-                    }
+                    }//Weather Condition
+                    
                     Spacer()
+                    
                     HStack(){
                         VStack(alignment: .leading){
                             HStack(){
@@ -89,8 +92,10 @@ struct ContentView: View {
                                     .colorInvert()
                                     .modifier(LightSubtext())
                             }
-                        }
+                        }// Weather Data (Wind/Rain/UV etc)
+                        
                         Spacer()
+                        
                         VStack(){
                             Text("\(Int(locationManager.weather.temp_c))º")
                                 .modifier(TemperatureText())
@@ -98,22 +103,22 @@ struct ContentView: View {
                             Text("\(Int(locationManager.weather.temp_f))ºF / Feels Like: \(Int(locationManager.weather.feelslike_c))ºC")
                                 .colorInvert()
                                 .modifier(UltraLightSubtext())
-                        }
+                        }//Temperature Data
                         .padding()
                     }.padding()
                 }
             )
     }
-    private var splashImageBackground: some View {
+    private var splashImageBackground: some View {      //sets background image
         GeometryReader { geometry in
-            Image("test4")
+            Image("black")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: geometry.size.width)
         }
     }
-    func getImage(code:Int) -> String {
+    func getImage(code:Int) -> String {     //Reads weather condition code from api and returns filename for weather condition icon
         var isDay: Bool
         if locationManager.weather.is_day == 0 {
             isDay = true

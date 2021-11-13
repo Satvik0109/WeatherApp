@@ -12,7 +12,7 @@ class LocationAndWeatherFetcher: NSObject, ObservableObject, CLLocationManagerDe
     let locationManager = CLLocationManager()
     @Published var location: CLLocation? = nil
     
-    var apiURL = "http://api.weatherapi.com/v1/current.json?key=c3d7e1deb7eb4db18cf201857211011&q="
+    var apiURL = ""
     
     @Published var weather = Weather()
     
