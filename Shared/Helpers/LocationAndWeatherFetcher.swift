@@ -31,13 +31,15 @@ class LocationAndWeatherFetcher: NSObject, ObservableObject, CLLocationManagerDe
             return
         }
         self.location = location
+        print(location.coordinate.latitude)
+        fetchDataFromAPI()
     }
     
     func fetchDataFromAPI(){
         
         let coordinate = self.locationManager.location != nil ? self.locationManager.location!.coordinate : CLLocationCoordinate2D()
         
-        apiURL += String(coordinate.latitude) + "," + String(coordinate.longitude) + "&aqi=no"
+        apiURL = "http://api.weatherapi.com/v1/current.json?key=c3d7e1deb7eb4db18cf201857211011&q=" + String(coordinate.latitude) + "," + String(coordinate.longitude) + "&aqi=no"
         print(apiURL)
         guard let api = URL(string: apiURL) else {
             return
